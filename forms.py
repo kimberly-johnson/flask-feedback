@@ -25,3 +25,10 @@ class FeedbackForm(FlaskForm):
 
     title = StringField("title", validators=[InputRequired()])
     content = StringField("content", validators=[InputRequired()])
+
+
+class UpdateFeedbackForm(FlaskForm):
+    """Form to update a feedback"""
+
+    title = StringField("title", validators=[InputRequired()])
+    content = StringField("content", validators=[InputRequired()])
