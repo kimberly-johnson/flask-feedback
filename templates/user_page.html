@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} {{user.username}} {% endblock %} 
+
+{% block content %}
+
+    <h1>Welcome to your page, {{user.username}}!</h1>
+
+    <p>First Name: {{user.first_name}}</p>
+    <p>Last Name: {{user.last_name}}</p>
+    <p>Email: {{user.email}}</p>
+
+    <h3>Here are all your feedbacks</h3>
+    <ul>
+        {% for feedback in feedbacks %}
+        <li>{{feedback.title}} - {{feedback.content}}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/users/{{user.username}}/feedback/add"><button>Add A New Feedback</button></a>
+
+{% endblock %}
